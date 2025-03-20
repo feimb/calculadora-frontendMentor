@@ -1,0 +1,180 @@
+html {
+  font-size: 62.5%;
+}
+
+body.theme-1 {
+  --main-background: #3a4764;
+  --toggle-background: #232c43;
+  --screen-background: #182034;
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow-: hsl(28, 16%, 65%);
+  --del-key-bg: hsl(225, 21%, 49%);
+  --del-key-shadow: hsl(224, 28%, 35%);
+  --eval-key-bg: hsl(6, 63%, 50%);
+  --eval-key-shadow: hsl(6, 70%, 34%);
+  --title-color: hsl(0, 0%, 100%);
+  --text-color: hsl(221, 14%, 31%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-background);
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 432px;
+}
+main header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+main header h1 {
+  color: var(--title-color);
+  font-size: 3.2rem;
+}
+main header .switch--section {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+main header .switch--section h2 {
+  margin-right: 12px;
+  font-size: 1.6rem;
+  color: var(--title-color);
+}
+main header .switch--section .switch--buttons {
+  position: absolute;
+  right: 2.7px;
+  display: flex;
+  height: 18px;
+  width: 60px;
+}
+main header .switch--section .switch--buttons label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main header .switch--section .switch--buttons label .theme-input {
+  z-index: 99;
+  opacity: 0;
+  border-raidus: none;
+}
+main header .switch--section .switch--buttons label span {
+  position: absolute;
+  font-size: 1.4rem;
+  color: var(--title-color);
+  top: -12px;
+  gap: 8px;
+}
+main header .switch--section .switch {
+  position: relative;
+  background-color: var(--toggle-background);
+  height: 18px;
+  width: 60px;
+  border-radius: 12px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+main header .switch--section .switch .indicator {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--eval-key-bg);
+  transition: left 0.3s ease-out;
+}
+main .display {
+  background: var(--screen-background);
+  color: var(--title-color);
+  font-size: 3.4rem;
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  text-justify: distribute;
+  align-items: center;
+  justify-content: end;
+}
+main .keypad {
+  margin-top: 24px;
+  height: 340px;
+  width: 100%;
+  background: var(--toggle-background);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: repeat(5, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+main .keypad input {
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  transition: all 0.3s ease-out;
+}
+main .keypad input:hover {
+  transform: scale(0.99);
+  filter: brightness(1.2);
+}
+main .keypad input:active {
+  transform: scale(0.9);
+}
+main .keypad .delete-btn,
+main .keypad .reset {
+  background: var(--del-key-bg);
+  color: var(--title-color);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 0px 0px var(--del-key-shadow);
+  cursor: pointer;
+}
+main .keypad .number,
+main .keypad .operator,
+main .keypad .point {
+  background: var(--key-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 0px 0px var(--key-shadow-);
+  cursor: pointer;
+}
+main .keypad .equal {
+  background: var(--eval-key-bg);
+  color: var(--title-color);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 0px 0px var(--eval-key-shadow);
+  cursor: pointer;
+}
+main .keypad .reset {
+  grid-area: 5/1/5/3;
+}
+main .keypad .equal {
+  grid-area: 5/3/5/5;
+}
+
+/*# sourceMappingURL=style.css.map */
