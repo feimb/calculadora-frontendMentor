@@ -14,24 +14,36 @@ function cambiarTema (theme){
 window.onload = () => {
   const theme = localStorage.getItem('theme');
   if(!theme){
-    localStorage.setItem('theme', '1');
-  }
-  if (theme) {
-    switch ("theme" + theme) {
-      case "theme1":
-        indicator.style.left = "3px";
-        cambiarTema("1");
-        break;
-      case "theme2":
-        indicator.style.left = "22px";
-        cambiarTema("2");
-        break;
-      case "theme3":
-        indicator.style.left = "42px";
-        cambiarTema("3");
-        break;
+    if (!theme) {
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(isDarkMode){
+        localStorage.setItem('theme', '2');
+      }else{
+        const themaRamdon = Math.floor(Math.random() * 2) + 1;
+        if(themaRamdon === 1){
+          localStorage.setItem('theme', '1');
+        }else{
+          localStorage.setItem('theme', '3');
+        }
+      }
     }
-  }   
+  }
+  const storageTheme = localStorage.getItem('theme');
+  switch ("theme" + storageTheme) {
+    case "theme1":
+      indicator.style.left = "3px";
+      cambiarTema("1");
+      break;
+    case "theme2":
+      indicator.style.left = "22px";
+      cambiarTema("2");
+      break;
+    case "theme3":
+      indicator.style.left = "42px";
+      cambiarTema("3");
+      break;
+  }  
+    
 };
 themesinput.forEach((input) => {
     input.addEventListener("change", () => {

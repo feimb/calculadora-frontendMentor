@@ -245,6 +245,19 @@ body.theme-3 main .keypad .equal {
   color: var(--eval-color);
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(228, 45%, 44%);
+  position: fixed;
+  bottom: 20px;
+  left: calc(50% - 100px);
+}
+
+body.theme-1 .attribution {
+  color: white;
+}
+
 @media (max-width: 500px) {
   main {
     width: 100%;

@@ -38,7 +38,7 @@ class Calculator {
         try{
             const expression = this.operation.textContent.replace(/x/g, "*");
 
-            if (!/^[0-9+\-*/().\s]+$/.test(expression)) {
+            if (!/^[0-9+\-*/().\s]+$/.test(expresion)) {
                 throw new Error("Expresión inválida");
             }
 
@@ -80,4 +80,10 @@ operators.forEach((operator) => {
     })
 });
 
-equal.addEventListener("click", () => calculadora.eval());
+equal.addEventListener("click", () => {
+    calculadora.eval();
+    equal.disabled = true;
+    setTimeout(() => {
+        equal.disabled = false;
+    }, 1100);
+});
