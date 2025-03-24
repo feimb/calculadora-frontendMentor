@@ -3,6 +3,7 @@ const indicator = document.querySelector('.indicator');
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('.number');
 const delBtn = document.querySelector('.delete-btn');
+const point = document.querySelector('.point');
 const operators = document.querySelectorAll('.operator');
 const resetBtn = document.querySelector('.reset');
 const equal = document.querySelector('.equal');

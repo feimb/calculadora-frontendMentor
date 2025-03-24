@@ -34,7 +34,7 @@ class Calculator {
 
         this.operation.textContent += " " + operator + " ";
     }
-    eval(expresion){
+    eval(){
         try{
             const expression = this.operation.textContent.replace(/x/g, "*");
 
@@ -55,6 +55,17 @@ class Calculator {
             }, 1000);
 
         }
+    }
+    point(){
+        if(this.operation.textContent === ""){
+            this.operation.textContent = "0.";
+            return;
+        }
+        const lastNumber = this.operation.textContent.split(" ").slice(-1)[0];
+        if(lastNumber.includes(".")){
+            return;
+        }
+        this.operation.textContent += ".";
     }
 }
    
@@ -77,6 +88,9 @@ operators.forEach((operator) => {
     operator.addEventListener("click", () => {
         calculadora.addOperator(operator.value);
     })
+});
+point.addEventListener("click", () => {
+    calculadora.point();
 });
 
 equal.addEventListener("click", () => {
