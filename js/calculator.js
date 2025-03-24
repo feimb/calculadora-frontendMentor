@@ -38,13 +38,12 @@ class Calculator {
         try{
             const expression = this.operation.textContent.replace(/x/g, "*");
 
-            if (!/^[0-9+\-*/().\s]+$/.test(expresion)) {
+            if (!/^[0-9+\-*/().\s]+$/.test(expression)) {
                 throw new Error("Expresión inválida");
             }
 
             const result = new Function(`return (${expression})`)();
 
-            if (!isFinite(result)) throw new Error("División por 0");
 
             this.operation.textContent = result;
         }catch(error){
