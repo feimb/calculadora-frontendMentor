@@ -68,9 +68,6 @@ class Calculator {
         this.operation.textContent += ".";
     }
 }
-   
-
-
 const calculadora = new Calculator(display);
 
 delBtn.addEventListener("click", () => {
